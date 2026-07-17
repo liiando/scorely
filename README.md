@@ -43,11 +43,13 @@ Control scores programmatically with simple HTTP requests:
 
 **Simple URL Format**
 ```
-GET  http://127.0.0.1:8080/score1/+200    # Add 200 points
-GET  http://127.0.0.1:8080/score1/-150    # Subtract 150 points
-GET  http://127.0.0.1:8080/score1/reset   # Reset to 0
-GET  http://127.0.0.1:8080/score1/x2/5m   # 2x multiplier for 5 minutes
+GET  http://127.0.0.1:<port>/score1/+200    # Add 200 points
+GET  http://127.0.0.1:<port>/score1/-150    # Subtract 150 points
+GET  http://127.0.0.1:<port>/score1/reset   # Reset to 0
+GET  http://127.0.0.1:<port>/score1/x2/5m   # 2x multiplier for 5 minutes
 ```
+
+The webhook port defaults to `8139`. If it is unavailable, Scorely selects and remembers another port; the active URLs are shown on the Webhook API page.
 
 **RESTful JSON API**
 ```
@@ -100,7 +102,7 @@ Available in 26 languages including:
 ## Server Ports
 
 - **HTTP Server**: Port 2627 (Display pages for OBS/TikTok)
-- **Webhook API**: Port 8080 (Score control API)
+- **Webhook API**: Port 8139 by default, with persistent automatic fallback (Score control API)
 
 ## Display URLs
 
@@ -121,7 +123,7 @@ Available in 26 languages including:
 
 ## Version
 
-Current Version: 1.0.0
+Current Version: 1.1.1
 
 ---
 
